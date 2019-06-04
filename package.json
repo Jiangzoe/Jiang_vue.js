@@ -1,0 +1,19 @@
+{
+  "name": "vue",
+  "version": "1.0.0",
+  "description": "Vue demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jiangzoe/Jiang_vue.js.git"
+  },
+  "author": "Jspang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jiangzoe/Jiang_vue.js/issues"
+  },
+  "homepage": "https://github.com/Jiangzoe/Jiang_vue.js#readme"
+}
