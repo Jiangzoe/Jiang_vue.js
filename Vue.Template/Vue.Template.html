@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <h1>HelloWorld</h1>
+  <hr>
+  <div id="app">
+    {{message}}
+  </div>
+  <!-- 在标签里建模板 -->
+  <template id="dd2">
+    <h2 style="color: red">我是标签模板</h2>
+  </template>
+
+  <!--  用script标签写模板 -->
+  <!-- 可以进行外部引用，src外部引用 -->
+  <script type="x-template" id="dd3">
+    <h2 style="color: red">我是script标签模板</h2>
+  </script>
+  <script>
+  var app = new Vue({
+    el:'#app',
+    data:{
+      message:'Hello World!'
+    },
+    template:'#dd3'
+    // template:'#dd2'
+    // 直接在构造器中建立模板
+    // template:`
+    // <h2 style="color:red">我是选项模板</h2>
+    // ` 
+  })
+  </script>
+</body>
+</html>
