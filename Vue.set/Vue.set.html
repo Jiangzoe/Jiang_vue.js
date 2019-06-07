@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <title>Vue.set全局操作</title>
+</head>
+<body>
+  <h1>Vue.set全局操作</h1>
+  <hr>
+  <div id="app">
+   {{count}}
+   <ul>
+     <li v-for="item in arr">{{item}}</li>
+   </ul>
+  </div>
+  <p><button onclick="add()">add</button></p>
+  <script>
+    function add(){
+      // Vue.set(outData,'count',2)
+      // app.count++;
+
+      // 改变下标  view无法监听到
+      // outData.count++;
+      // app.arr[1]='ddd'
+      Vue.set(app.arr,1,'ddd')
+    }
+    var outData = {
+      count:1,
+      goods:'car',
+      arr:['aaa','bbb','ccc']
+    }
+  var app = new Vue({
+    el:'#app',
+    data:outData
+  })
+  </script>
+</body>
+</html>
