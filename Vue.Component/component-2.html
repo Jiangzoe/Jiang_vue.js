@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <title>Component-2</title>
+</head>
+
+<body>
+  <h1>Component-2</h1>
+  <hr>
+  <div id="app">
+    <panda v-bind:from-here="message"></panda>
+    <!-- '-'在vue中不管用，要换成驼峰式 -->
+  </div>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data:{
+        message:'China'
+      },
+      // 定义局部组件
+      components: {
+        "panda": {
+          template: `<div style="color:green">Panda from {{fromHere}}</div>`,
+          props:['fromHere']
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
