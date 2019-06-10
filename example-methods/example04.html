@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <title>slot content extend demo</title>
+</head>
+<body>
+  <h1>slot content extend demo</h1>
+  <hr>
+  <div id="app">
+    <jiang>
+      <span slot="bolgUrl">{{jiangData.bolgUrl}}</span>
+      <span slot="netName">{{jiangData.netName}}</span>
+      <span slot="skill">{{jiangData.skill}}</span>
+    </jiang>
+  </div>
+
+  <template id= "tep">
+    <div>
+      <p>GitHub地址：<slot name="bolgUrl"></slot></p>
+      <p>网名：<slot name="netName"></slot></p>
+      <p>技术类型：<slot name="skill"></slot></p>
+    </div>
+      </template>
+  <script>
+    var jiang = {
+      template:'#tep'
+    }
+  var app = new Vue({
+    el:'#app',
+    data:{
+      jiangData:{
+        bolgUrl:'https://github.com/Jiangzoe',
+        netName:'jiang',
+        skill:'vue'
+      }
+      
+      },
+      components:{
+        "jiang":jiang
+    }
+  })
+  </script>
+</body>
+</html>
