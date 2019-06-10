@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <title>example methods</title>
+</head>
+
+<body>
+  <h1>example methods</h1>
+  <hr>
+  <div id="app"></div>
+  <p><button onclick="destroy()">卸载</button></p>
+  <p><button onclick="reload()">刷新</button></p>
+  <script>
+    var jiang = Vue.extend({
+      template: `<p>{{message}}</p>`,
+      data() {
+        return {
+          message: 'hello,I am Jiang'
+        }
+      },
+      mounted() {
+        console.log('mounted 被创建')
+      },
+      destroyed(){
+        console.log('destroy 销毁之后')
+      },
+     updated(){
+        console.log('updated 更新之后')
+      }
+    })
+    var vm = new jiang().$mount('#app')
+    function destroy() {
+      vm.$destroy();
+    }
+    function reload(){
+      vm.$forceUpdate()
+    }
+  </script>
+</body>
+
+</html>
