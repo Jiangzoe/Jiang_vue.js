@@ -1,6 +1,13 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
+    <div>
+      <router-link to="/">首页</router-link> | 
+      <router-link to="/Hi">Hi</router-link> | 
+      <router-link :to="{name:'Hi1',params:{username:'Jiang',id:'1'}}">Hi1</router-link> | 
+      <router-link to="/Hi/hi2">Hi2</router-link> 
+    </div>
+    <p>{{ $route.name }}</p>
     <router-view/>
   </div>
 </template>
