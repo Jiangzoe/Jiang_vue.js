@@ -15,6 +15,8 @@
   "bugs": {
     "url": "https://github.com/Jiangzoe/Jiang_vue.js/issues"
   },
-  "homepage": "https://github.com/Jiangzoe/Jiang_vue.js#readme"
-
+  "homepage": "https://github.com/Jiangzoe/Jiang_vue.js#readme",
+  "dependencies": {
+    "vuex": "file:vuex"
+  }
 }
